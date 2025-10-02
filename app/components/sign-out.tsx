@@ -1,15 +1,15 @@
-import { signIn } from "@/auth"
+import { signOut } from "@/auth"
 
-export function SignIn() {
+export default function SignOut() {
   async function submit() {
     "use server"
-    await signIn("github", { redirectTo: "/" })
+    await signOut({ redirectTo: "/" })
   }
 
   return (
     <form action={submit}>
       <button type="submit" className="px-3 py-2 rounded-md bg-stone-900 cursor-pointer">
-        Sign in using GitHub
+        Signout
       </button>
     </form>
   )
